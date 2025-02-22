@@ -1,29 +1,15 @@
 import React from 'react'
-// import TopBar from "@/app/components/Home/TopBar"
-function TopBar() {
-  return (
-    <div className=''>
-      <div>
-        Search
-      </div>
-      <div>
-        Logo
-      </div>
-      <div>
-        Account
-      </div>
-      <div>
-        Shopping
-      </div>
-    </div>
-  )
-}
+import TopBar from "@/app/components/TopBar"
+import Categories from "@/app/components/Categories"
 
 function Home() {
   return (
-    <div>
-      {/* <TopBar /> */}
-      <TopBar></TopBar>
+    <div className='bg-gray-600 py-12'>
+      <div className='w-4/5 mx-auto'>
+        {/* <TopBar /> */}
+        <TopBar></TopBar>
+        <Categories></Categories>
+      </div>
     </div>
   )
 }
