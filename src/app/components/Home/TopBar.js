@@ -1,5 +1,5 @@
 import React from 'react'
-// import TopBar from "@/app/components/Home/TopBar"
+
 function TopBar() {
   return (
     <div className=''>
@@ -19,13 +19,4 @@ function TopBar() {
   )
 }
 
-function Home() {
-  return (
-    <div>
-      {/* <TopBar /> */}
-      <TopBar></TopBar>
-    </div>
-  )
-}
-
-export default Home
+export default TopBar

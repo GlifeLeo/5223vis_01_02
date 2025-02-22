@@ -6,7 +6,7 @@ function ImageComponent() {
 function SignupForm() {
   return <form>
     <input className='border' placeholder='username' />
-    <input className='border' placeholder='password' type="password" />
+    <input className='border text-black' placeholder='password' type="password" />
     <button>Sign up</button>
   </form>
 }
@@ -18,5 +18,7 @@ function BaiTap() {
     </div>
   )
 }
+
+
 
 export default BaiTap
