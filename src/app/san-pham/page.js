@@ -115,7 +115,7 @@ function ProductPage() {
   ];
 
   return <div className="w-4/5 mx-auto ">
-    <div className="text-4xl">Products</div>
+    <div className="text-4xl py-10">Products</div>
     <div className="grid grid-cols-3 gap-10 py-10">
       {products.map((pro, i) => {
         return <div key={i} >
