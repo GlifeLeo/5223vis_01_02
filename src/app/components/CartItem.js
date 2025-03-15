@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function CartItem({ imageUrl, price, name, color, size, sl }) {
 
   const [qty, setQty] = useState(sl)
-
   return (
-    <div className='flex gap-4 my-5'>
+    <div
+      className='flex gap-4 my-5'>
       <img className='w-40 h-40 object-cover' src={imageUrl} />
       <div className='w-full'>
         <div className='text-3xl'>{name}</div>
