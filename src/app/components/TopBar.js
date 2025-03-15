@@ -10,9 +10,12 @@ function TopBar() {
         </svg>
         {/* <input placeholder='search' className='bg-transparent' /> */}
       </div>
-      <div className='text-center w-full'>
-        Logo
-      </div>
+      <Link href='/'>
+        <div className='text-center w-full'>
+          Logo
+        </div>
+      </Link>
+
       <div className="flex gap-x-8">
         <Link href='/san-pham'>Products</Link>
         <Link href='/lien-he' className='whitespace-nowrap'>Contact Us</Link>
