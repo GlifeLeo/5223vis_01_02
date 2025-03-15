@@ -1,8 +1,8 @@
 import React from "react";
-
+import Link from "next/link"
 function Product(props) {
   return (
-    <div>
+    <Link href={"/san-pham/" + props.id}>
       <div className=" rounded-xl flex justify-center py-10 bg-slate-50">
         <img
           className="w-32 h-32 max-h-40 object-cover"
@@ -36,7 +36,7 @@ function Product(props) {
             ""
         }
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -48,6 +48,7 @@ function ProductPage() {
       price: 145,
       rate: 4,
       discount: 0,
+      id: 1
     },
     {
       name: "Polo with Tipping Details",
@@ -55,6 +56,7 @@ function ProductPage() {
       price: 180,
       rate: 4,
       discount: 10,
+      id: 2
     },
     {
       name: "Polo with Tipping Details",
@@ -62,6 +64,7 @@ function ProductPage() {
       price: 200,
       rate: 3,
       discount: 30,
+      id: 3
     },
     {
       name: "Slim Fit Chinos",
@@ -69,6 +72,7 @@ function ProductPage() {
       price: 220,
       rate: 5,
       discount: 15,
+      id: 4
     },
     {
       name: "Casual Denim Jacket",
@@ -76,6 +80,7 @@ function ProductPage() {
       price: 350,
       rate: 4.5,
       discount: 20,
+      id: 5
     },
     {
       name: "Hooded Sweatshirt",
@@ -83,6 +88,7 @@ function ProductPage() {
       price: 275,
       rate: 4.2,
       discount: 10,
+      id: 5
     },
     {
       name: "Crew Neck Sweater",
@@ -90,6 +96,7 @@ function ProductPage() {
       price: 190,
       rate: 4.7,
       discount: 5,
+      id: 6
     },
     {
       name: "Classic Leather Belt",
@@ -97,6 +104,7 @@ function ProductPage() {
       price: 95,
       rate: 4.8,
       discount: 0,
+      id: 7
     },
     {
       name: "High-Top Sneakers",
@@ -104,6 +112,7 @@ function ProductPage() {
       price: 400,
       rate: 4.6,
       discount: 25,
+      id: 8
     },
     {
       name: "Sports Joggers",
@@ -111,6 +120,7 @@ function ProductPage() {
       price: 210,
       rate: 4.3,
       discount: 10,
+      id: 9
     }
   ];
 
@@ -124,6 +134,7 @@ function ProductPage() {
             imageUrl={pro.imageUrl}
             price={pro.price}
             rate={pro.rate}
+            id={pro.id}
             discount={pro.discount}
           />
         </div>
