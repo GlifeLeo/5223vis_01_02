@@ -22,7 +22,7 @@ function ShoppingCart() {
           {/* Cart Items List */}
           <div className="md:col-span-2 bg-white shadow-md rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Your Items</h2>
-            <div className="divide-y">
+            <div className="flex flex-col gap-4">
               {cart.items.map((item, index) => (
                 <CartItem
                   key={index}
