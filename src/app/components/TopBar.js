@@ -1,7 +1,13 @@
+'use client'
+
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '@/app/contexts/CartProvider'
 
 function TopBar() {
+
+  const cart = useContext(CartContext)
+
   return (
     <div className='flex justify-between text-white pb-7 border-b-2 border-white'>
       <div>
@@ -18,13 +24,16 @@ function TopBar() {
 
       <div className="flex gap-x-8">
         <Link href='/san-pham'>Products</Link>
-        <Link href='/lien-he' className='whitespace-nowrap'>Contact Us</Link>
+        <Link href='/contact-us' className='whitespace-nowrap'>Contact Us</Link>
         <Link href="/gio-hang">
           <span className='flex items-center gap-x-2'>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             Shopping
+            {cart.slSpTrongCart ? <sup className="bg-red-500 rounded-full text-white w-5 h-5 flex justify-center items-center">
+              {cart.slSpTrongCart}
+            </sup> : ""}
           </span>
         </Link>
         <span className='flex items-center gap-x-2'>

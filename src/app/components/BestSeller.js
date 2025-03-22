@@ -52,11 +52,11 @@ function BestSeller() {
 
   return (
     <div>
-      <div className="text-center my-10">Best Seller</div>
+      <div className="text-center my-10 text-4xl uppercase">Best Seller</div>
       <div className="grid grid-cols-4 gap-4">
         {products.map((product, index) => {
           return (
-            <div key={index} className='relative bg-gray-100'>
+            <div key={index} className='relative'>
 
               {
                 product.status ?

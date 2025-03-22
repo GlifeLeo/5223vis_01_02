@@ -1,129 +1,45 @@
 import React from "react";
 import Link from "next/link"
+import { products } from "@/backend/index"
+
+
 function Product(props) {
   return (
-    <Link href={"/san-pham/" + props.id}>
-      <div className=" rounded-xl flex justify-center py-10 bg-slate-50">
+    <Link href={`/san-pham/${props.id}`} className="block p-4 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="rounded-xl flex justify-center bg-slate-50 relative max-h-56 overflow-hidden">
         <img
-          className="w-32 h-32 max-h-40 object-cover"
+          className="min-w-full h-full object-cover transition-transform duration-300"
           src={props.imageUrl}
+          alt={props.name}
         />
+        {props.discount !== 0 && (
+          <div className=" m-4 absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+            -{props.discount}%
+          </div>
+        )}
       </div>
-      <h3 className="font-bold text-2xl my-6">
+
+      <h3 className="font-bold text-lg my-4 text-gray-800">
         {props.name}
       </h3>
-      <div>
-        {props.rate}/5
+
+      <div className="flex items-center gap-1 text-yellow-400">
+        ⭐ {props.rate}/5
       </div>
-      <div className="flex items-center gap-x-3">
-        <div>
-          ${props.price}
-        </div>
-        {
-          props.discount != 0 ?
-            <div className="line-through text-gray-300">
-              ${props.price + props.price * (props.discount / 100)}
-            </div>
-            :
-            ""
-        }
-        {
-          props.discount != 0 ?
-            <div className="bg-red-100 rounded-full py-1 px-2 text-red-500 inline">
-              -{props.discount}%
-            </div>
-            :
-            ""
-        }
+
+      <div className="flex items-center gap-x-3 mt-2">
+        <div className="text-lg font-semibold text-gray-900">${props.price}</div>
+        {props.discount !== 0 && (
+          <div className="text-sm text-gray-400 line-through">
+            ${props.price + props.price * (props.discount / 100)}
+          </div>
+        )}
       </div>
     </Link>
-  )
+  );
 }
 
 function ProductPage() {
-  const products = [
-    {
-      name: "Gradient Graphic T-shirt",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 145,
-      rate: 4,
-      discount: 0,
-      id: 1
-    },
-    {
-      name: "Polo with Tipping Details",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 180,
-      rate: 4,
-      discount: 10,
-      id: 2
-    },
-    {
-      name: "Polo with Tipping Details",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 200,
-      rate: 3,
-      discount: 30,
-      id: 3
-    },
-    {
-      name: "Slim Fit Chinos",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 220,
-      rate: 5,
-      discount: 15,
-      id: 4
-    },
-    {
-      name: "Casual Denim Jacket",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 350,
-      rate: 4.5,
-      discount: 20,
-      id: 5
-    },
-    {
-      name: "Hooded Sweatshirt",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 275,
-      rate: 4.2,
-      discount: 10,
-      id: 5
-    },
-    {
-      name: "Crew Neck Sweater",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 190,
-      rate: 4.7,
-      discount: 5,
-      id: 6
-    },
-    {
-      name: "Classic Leather Belt",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 95,
-      rate: 4.8,
-      discount: 0,
-      id: 7
-    },
-    {
-      name: "High-Top Sneakers",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 400,
-      rate: 4.6,
-      discount: 25,
-      id: 8
-    },
-    {
-      name: "Sports Joggers",
-      imageUrl: "https://picsum.photos/200/300",
-      price: 210,
-      rate: 4.3,
-      discount: 10,
-      id: 9
-    }
-  ];
-
   return <div className="w-4/5 mx-auto ">
     <div className="text-4xl py-10">Products</div>
     <div className="grid grid-cols-3 gap-10 py-10">
